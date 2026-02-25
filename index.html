@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nikhil Vytla - Cybersecurity Engineer & Network Architect Portfolio" />
+  <!-- Cinematic Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <title>Nikhil Vytla | Cinematic Portfolio</title>
+  <script type="module" crossorigin src="/portfolio/assets/index-WJj9IBBf.js"></script>
+  <link rel="stylesheet" crossorigin href="/portfolio/assets/index-zeq1pkBm.css">
+</head>
+
+<body>
+  <!-- ThreeJS WebGL Canvas Container -->
+  <div id="canvas-container"></div>
+
+  <!-- UI Overlay for Scrollable Content -->
+  <main class="content-overlay">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="fullscreen-section">
+      <div class="hero-content fade-up">
+        <h1 class="cinematic-title">NIKHIL VYTLA</h1>
+        <div class="title-underline"></div>
+        <div class="social-links fade-up" style="transition-delay: 150ms">
+          <a href="https://github.com/vytlanikhil" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/nikhilvytla/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="https://www.instagram.com/destructive.exe" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+        </div>
+        <div class="roles typing-container">
+          <!-- Typing effect will be handled in JS -->
+          <p id="typing-text"></p>
+        </div>
+        <a href="#about" class="cta-button">Explore Portfolio</a>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="content-section">
+      <h2 class="section-title fade-up">Focus & Foundation</h2>
+      <div class="about-grid">
+        <div class="dark-panel fade-up">
+          <h3>Education</h3>
+          <p class="school-title">B.Tech – Computer Science & Engineering</p>
+          <p class="school-meta">KL University | 2023–2027</p>
+          <p class="school-cgpa">CGPA: <span class="accent-text">8.67/10</span></p>
+        </div>
+        <div class="dark-panel fade-up">
+          <h3>Leadership & Rank</h3>
+          <p>Secretary – Cybersecurity & Ethical Hacking Club</p>
+          <div class="badge-container">
+            <span class="accent-badge">TOP 4%</span>
+            <span>on TryHackMe</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="content-section">
+      <h2 class="section-title fade-up">Technical Expertise</h2>
+      <div class="skills-grid">
+        <div class="skill-card fade-up">
+          <h4>Programming</h4>
+          <div class="chip-container">
+            <span class="skill-chip">Java</span>
+            <span class="skill-chip">C</span>
+            <span class="skill-chip">Python</span>
+            <span class="skill-chip">JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-card fade-up" style="transition-delay: 100ms">
+          <h4>Networking</h4>
+          <div class="chip-container">
+            <span class="skill-chip">TCP/IP</span>
+            <span class="skill-chip">Subnetting</span>
+            <span class="skill-chip">Routing</span>
+            <span class="skill-chip">Switching</span>
+            <span class="skill-chip">VLANs</span>
+          </div>
+        </div>
+        <div class="skill-card fade-up" style="transition-delay: 200ms">
+          <h4>Cybersecurity</h4>
+          <div class="chip-container">
+            <span class="skill-chip">Wireshark</span>
+            <span class="skill-chip">Nmap</span>
+            <span class="skill-chip">Burp Suite</span>
+            <span class="skill-chip">Web Security</span>
+            <span class="skill-chip">Linux</span>
+          </div>
+        </div>
+        <div class="skill-card fade-up" style="transition-delay: 300ms">
+          <h4>Tools</h4>
+          <div class="chip-container">
+            <span class="skill-chip">Git</span>
+            <span class="skill-chip">Docker</span>
+            <span class="skill-chip">AWS Fundamentals</span>
+            <span class="skill-chip">Packet Tracer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="content-section">
+      <h2 class="section-title fade-up">Projects & Deployments</h2>
+      <div class="projects-grid">
+        <div class="project-card fade-up">
+          <h3 class="project-title">Automated Network Vulnerability Scanner</h3>
+          <ul class="project-details">
+            <li>Python automation with Nmap integration</li>
+            <li>Custom port configuration</li>
+            <li>JSON reporting built-in</li>
+            <li>Achieved 30% optimized workflow</li>
+          </ul>
+          <div class="project-actions">
+            <a href="https://github.com/nikhilvytla" target="_blank" rel="noopener noreferrer" class="github-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="project-divider"></div>
+
+        <div class="project-card fade-up" style="transition-delay: 150ms">
+          <h3 class="project-title">Enterprise Network Simulation</h3>
+          <ul class="project-details">
+            <li>Multi-VLAN architecture with ACL</li>
+            <li>Inter-VLAN routing setup</li>
+            <li>Secure network segmentation</li>
+          </ul>
+          <div class="project-actions">
+            <a href="https://github.com/nikhilvytla" target="_blank" rel="noopener noreferrer" class="github-btn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path
+                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                </path>
+              </svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS & LEADERSHIP SECTION -->
+    <section id="experience" class="content-section">
+      <h2 class="section-title fade-up">Certifications & Impact</h2>
+
+      <div class="cert-block fade-up">
+        <div class="cert-header">
+          <div class="badge-icon"></div>
+          <h3>Certified Ethical Hacker (CEH v13)</h3>
+        </div>
+        <div class="cert-underline"></div>
+        <div class="cert-details">
+          <p>EC-Council &bull; Active Certification</p>
+          <div class="status-indicator">
+            <div class="status-dot"></div>
+            <span>Verified</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-layout">
+        <div class="timeline-item fade-up">
+          <h4>Secretary – Cybersecurity Club</h4>
+          <p>Mentored 50+ students in practical security.</p>
+        </div>
+        <div class="timeline-item fade-up" style="transition-delay: 100ms">
+          <h4>Competitive Milestones</h4>
+          <p>Participated in 5+ Hackathons & CTFs.</p>
+        </div>
+        <div class="timeline-item fade-up" style="transition-delay: 200ms">
+          <h4>Infrastructure Built</h4>
+          <p>Designed and deployed 5+ physical/virtual lab environments.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>&copy; 2026 Nikhil Vytla. System Secure.</p>
+    </footer>
+  </main>
+</body>
+
+</html>
