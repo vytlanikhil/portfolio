@@ -270,6 +270,66 @@ html {
   letter-spacing: 1px;
 }
 
+/* About Me CSS Section */
+.about-me-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 120px;
+  max-width: 1000px;
+  margin: 0 auto 60px 0;
+  /* Align left */
+}
+
+.profile-image-container {
+  position: relative;
+  flex-shrink: 0;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, var(--accent), transparent, var(--accent));
+  animation: borderRotate 5s linear infinite;
+  box-shadow: 0 0 30px var(--accent-glow);
+}
+
+@keyframes borderRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  border: 4px solid var(--bg-primary);
+  position: relative;
+  z-index: 2;
+  /* Counter-rotate the image so it stays upright while the border spins */
+  animation: borderRotate 5s linear infinite reverse;
+}
+
+.bio-content p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.bio-content p:last-child {
+  margin-bottom: 0;
+}
+
+
 /* Grids */
 .about-grid,
 .projects-grid {
@@ -401,6 +461,32 @@ html {
   margin-bottom: 0;
 }
 
+.cert-link {
+  color: var(--text-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.cert-link:hover {
+  color: var(--accent);
+}
+
+.link-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+  transition: transform 0.3s ease;
+}
+
+.cert-link:hover .link-icon {
+  transform: translate(2px, -2px);
+  color: var(--accent);
+  opacity: 1;
+}
+
 .cert-underline {
   height: 1px;
   width: 60px;
@@ -489,7 +575,37 @@ footer {
   letter-spacing: 1px;
 }
 
+.footer-contact {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  font-size: 14px;
+}
+
+.contact-link {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+  text-shadow: 0 0 10px var(--accent-glow);
+  color: var(--text-primary);
+}
+
 @media screen and (max-width: 768px) {
+  .about-me-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .profile-image-container {
+    max-width: 200px;
+    margin-bottom: 20px;
+  }
+
   .cinematic-title {
     font-size: 36px;
   }
