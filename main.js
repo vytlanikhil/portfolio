@@ -5,8 +5,8 @@ import * as THREE from 'three';
 // ------------------------------------------------------------
 const canvasContainer = document.getElementById('canvas-container');
 const scene = new THREE.Scene();
-scene.background = new THREE.Color(0x0B0C10); // Strict deep space black
-scene.fog = new THREE.FogExp2(0x0B0C10, 0.03); // Softer cinematic fog
+scene.background = new THREE.Color(0x0B0F14); // Strict deep space black (Elite Red Team pattern)
+scene.fog = new THREE.FogExp2(0x0B0F14, 0.03); // Softer cinematic fog
 
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
 camera.position.set(0, 2, 8); // Start camera position
@@ -47,10 +47,10 @@ const planeGeometry = new THREE.PlaneGeometry(80, 80, 64, 64);
 const basePositions = new Float32Array(planeGeometry.attributes.position.array); // Store original Grid X,Y
 
 const mountainMaterial = new THREE.MeshStandardMaterial({
-    color: 0x1A1D21, // Matte graphite
+    color: 0x8A1C1C, // Muted tactical red variant for the grid
     wireframe: true, // Tech/architectural cinematic feel
-    roughness: 0.6,
-    metalness: 0.5
+    roughness: 0.4,
+    metalness: 0.8 // High metalness for sharp light reflections
 });
 
 const mountain = new THREE.Mesh(planeGeometry, mountainMaterial);
@@ -101,9 +101,9 @@ emberGeometry.setAttribute('position', new THREE.BufferAttribute(emberPosArray, 
 
 const emberMaterial = new THREE.PointsMaterial({
     size: 0.3,
-    color: 0x4DE8D4, // Cyber Teal Primary (Faded 30%)
+    color: 0xFF4D00, // Elite Red Team Primary
     transparent: true,
-    opacity: 0.6,
+    opacity: 0.3, // Reduced opacity so it is not overwhelming
     map: circleTexture,
     blending: THREE.AdditiveBlending,
     depthWrite: false
@@ -111,20 +111,22 @@ const emberMaterial = new THREE.PointsMaterial({
 const emberMesh = new THREE.Points(emberGeometry, emberMaterial);
 scene.add(emberMesh);
 
+
+
 // ------------------------------------------------------------
 // LIGHTING
 // ------------------------------------------------------------
 // Ambient very dim light
-const ambientLight = new THREE.AmbientLight(0x0B0C10, 2);
+const ambientLight = new THREE.AmbientLight(0x0B0F14, 2);
 scene.add(ambientLight);
 
 // Distant light source on mountain peak (symbolizing ambition)
-const peakLight = new THREE.PointLight(0x3BBDAE, 50, 100); // Cyber Teal Hover color (Faded)
+const peakLight = new THREE.PointLight(0xFF4D00, 30, 100); // Softer orange
 peakLight.position.set(0, 10, -30);
 scene.add(peakLight);
 
 // Interactive Mouse Cursor Light (Tracks terrain)
-const cursorLight = new THREE.PointLight(0x4DE8D4, 20, 20); // Cyber Teal Primary (Faded)
+const cursorLight = new THREE.PointLight(0xFF4D00, 12, 20); // Dimmer tactical red/orange
 scene.add(cursorLight);
 
 // ------------------------------------------------------------
@@ -215,6 +217,8 @@ function animate() {
         }
     }
     starsGeometry.attributes.position.needsUpdate = true;
+
+
 
     renderer.render(scene, camera);
 }

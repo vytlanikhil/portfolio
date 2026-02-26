@@ -1,24 +1,24 @@
 :root {
-  /* Strict Color Palette Constraint */
-  --bg-primary: #0B0C10;
+  /* Strict Color Palette Constraint - Elite Red Team */
+  --bg-primary: #0B0F14;
   /* Deep space black */
-  --bg-secondary: #0b0f1c;
+  --bg-secondary: #11161C;
   /* Charcoal grey/Navy hint */
-  --surface-primary: rgba(255, 255, 255, 0.03);
+  --surface-primary: #11161C;
   /* Glass premium base */
 
-  --text-primary: #E6E6E6;
-  /* Muted ash white */
-  --text-secondary: #C5C6C7;
-  /* Soft silver */
+  --text-primary: #FFFFFF;
+  /* Muted ash white - updated to crisp white */
+  --text-secondary: #A0A0A0;
+  /* Soft silver - updated to muted */
 
-  /* Cyber Teal Palette (Option B) - Faded 30% per request */
-  --accent: #4DE8D4;
-  /* Was #00F5D4, now highly saturated but brighter/washed */
-  --accent-hover: #3BBDAE;
-  /* Was #00C2A8 */
-  --accent-glow: rgba(77, 232, 212, 0.25);
-  /* Faded glow */
+  /* Elite Red Team Palette */
+  --accent: #FF4D00;
+  /* Primary Actionable Orange */
+  --accent-hover: #E10600;
+  /* Critical Red */
+  --accent-glow: rgba(255, 77, 0, 0.15);
+  /* Subtle Orange glow */
 
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
@@ -97,6 +97,7 @@ html {
   text-transform: uppercase;
   color: var(--text-primary);
   margin-bottom: 0.2rem;
+  text-shadow: 0 0 30px rgba(255, 77, 0, 0.3);
 }
 
 /* Hero Section Refinements */
@@ -175,16 +176,21 @@ html {
   color: var(--text-primary);
   text-decoration: none;
   background-color: transparent;
+  /* Transparent background */
   border: 1px solid var(--accent);
+  /* Orange border */
   border-radius: 30px;
+  box-shadow: 0 0 15px var(--accent-glow);
   transition: all 0.4s ease;
 }
 
 .cta-button:hover {
-  background-color: var(--accent);
-  color: var(--bg-primary);
-  /* Bold invert out */
-  box-shadow: 0 0 30px var(--accent-glow);
+  background-color: var(--accent-hover);
+  /* Transition to Red emphasis */
+  color: var(--text-primary);
+  border-color: var(--accent-hover);
+  box-shadow: 0 0 30px rgba(255, 77, 0, 0.4);
+  /* Stronger orange glow on hover */
   transform: translateY(-2px);
   font-weight: 600;
 }
@@ -197,7 +203,7 @@ html {
   background: var(--surface-primary);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 77, 0, 0.2);
   border-radius: 18px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   padding: 32px;
@@ -216,11 +222,20 @@ html {
 /* Internal Typesetting for Cards */
 .dark-panel h3,
 .project-card h3,
-.cert-block h3,
-.skill-card h4 {
+.cert-block h3 {
   font-family: var(--font-heading);
   font-size: 24px;
   color: var(--text-primary);
+  margin-bottom: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.skill-card h4 {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  color: var(--accent);
+  /* Red Team category title color */
   margin-bottom: 24px;
   font-weight: 600;
   letter-spacing: 1px;
@@ -260,7 +275,8 @@ html {
 }
 
 .accent-badge {
-  background: rgba(77, 232, 212, 0.1);
+  background: rgba(255, 77, 0, 0.1);
+  /* Primary Orange slight alpha */
   border: 1px solid var(--accent);
   color: var(--accent);
   font-size: 12px;
@@ -289,7 +305,8 @@ html {
   height: 250px;
   border-radius: 50%;
   padding: 4px;
-  background: linear-gradient(135deg, var(--accent), transparent, var(--accent));
+  border: 1px solid rgba(255, 77, 0, 0.3);
+  /* Elite Red Team About Me Border */
   animation: borderRotate 5s linear infinite;
   box-shadow: 0 0 30px var(--accent-glow);
 }
@@ -352,20 +369,35 @@ html {
 }
 
 .skill-chip {
+  position: relative;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 30px;
-  padding: 6px 14px;
+  padding: 6px 14px 6px 24px;
+  /* Space for accent dot */
   font-size: 14px;
   color: var(--text-secondary);
   transition: all 0.3s ease;
 }
 
+.skill-chip::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-hover);
+  /* Critical red dot */
+  border-radius: 50%;
+}
+
 .skill-card:hover .skill-chip:hover {
   border-color: var(--accent);
-  color: var(--accent);
+  color: var(--text-primary);
   box-shadow: 0 0 15px var(--accent-glow);
-  background: rgba(77, 232, 212, 0.05);
+  background: rgba(255, 77, 0, 0.05);
 }
 
 /* Projects */
@@ -439,6 +471,8 @@ html {
   display: flex;
   flex-direction: column;
   padding: 40px;
+  border-top: 2px solid var(--accent);
+  /* Elite Red Team structural cert indicator */
 }
 
 .cert-header {
@@ -517,9 +551,10 @@ html {
 .status-dot {
   width: 8px;
   height: 8px;
-  background: var(--accent);
+  background: var(--accent-hover);
+  /* Critical Red Emphasis */
   border-radius: 50%;
-  box-shadow: 0 0 8px var(--accent-glow);
+  box-shadow: 0 0 8px rgba(225, 6, 0, 0.5);
 }
 
 /* Timeline/Experience (Style 3 Inspired) */
@@ -530,7 +565,8 @@ html {
 }
 
 .timeline-item {
-  background: #0E1424;
+  background: rgba(255, 255, 255, 0.02);
+  /* Eliminate blue #0E1424 hex - neutral grey/black */
   /* Style 3 Minimal Sharp Box */
   border-left: 3px solid var(--accent);
   border-radius: 10px;
