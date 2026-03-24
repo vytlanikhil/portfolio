@@ -302,8 +302,8 @@ function typeSequence() {
         typingDelay = 500;
     }
 
-    // Use a trailing cursor effect in CSS by adding a span or pipe, but textContent handles the string
-    typingText.innerHTML = typingText.textContent + '<span class="cursor" style="color: var(--accent); animation: blink 1s step-end infinite;">|</span>';
+    // Use a solid block cursor for a terminal aesthetic
+    typingText.innerHTML = typingText.textContent + '<span class="cursor" style="color: var(--accent); animation: blink 1s step-end infinite;">█</span>';
 
     setTimeout(typeSequence, typingDelay);
 }
