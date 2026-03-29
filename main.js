@@ -64,7 +64,7 @@ scene.add(mountain);
 
 // Stars
 const starsGeometry = new THREE.BufferGeometry();
-const starsCount = 1500;
+const starsCount = 1350;
 const posArray = new Float32Array(starsCount * 3);
 
 for (let i = 0; i < starsCount * 3; i++) {
@@ -87,7 +87,7 @@ scene.add(starsMesh);
 
 // Data Embers (Replacing static clouds with rising energy)
 const emberGeometry = new THREE.BufferGeometry();
-const emberCount = 300;
+const emberCount = 270;
 const emberPosArray = new Float32Array(emberCount * 3);
 const emberVelocities = new Float32Array(emberCount); // Unique upward speeds
 
