@@ -232,11 +232,32 @@ window.addEventListener('resize', () => {
 
 // Parallax scrolling for HTML content
 let scrollY = window.scrollY;
+const socialLinks = document.querySelector('.social-links');
+
 window.addEventListener('scroll', () => {
     scrollY = window.scrollY;
     // Lower camera slightly based on scroll distance for native page feel
     camera.position.z = 8 - (scrollY * 0.005);
 });
+
+// IntersectionObserver to lift social links when footer is visible
+const footerElement = document.querySelector('footer');
+if (footerElement && socialLinks) {
+    const footerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                socialLinks.classList.add('lifted');
+            } else {
+                socialLinks.classList.remove('lifted');
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1 // Triggers when 10% of the footer is visible
+    });
+    footerObserver.observe(footerElement);
+}
 
 animate();
 
