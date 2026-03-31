@@ -702,7 +702,7 @@ html {
 /* Footer */
 footer {
   text-align: center;
-  padding: 60px 0;
+  padding: 60px 0 120px 0;
   color: var(--text-secondary);
   font-size: 14px;
   letter-spacing: 1px;
