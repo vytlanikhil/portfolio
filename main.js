@@ -233,11 +233,32 @@ window.addEventListener('resize', () => {
 // Parallax scrolling for HTML content
 let scrollY = window.scrollY;
 const socialLinks = document.querySelector('.social-links');
+const scrollProgressBar = document.getElementById('scroll-progress');
+const navbar = document.querySelector('.glass-nav');
 
 window.addEventListener('scroll', () => {
     scrollY = window.scrollY;
     // Lower camera slightly based on scroll distance for native page feel
     camera.position.z = 8 - (scrollY * 0.005);
+
+    // Scroll Progress Bar Update
+    const totalScroll = document.documentElement.scrollTop;
+    const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    if (windowHeight > 0 && scrollProgressBar) {
+        const scrollPercent = (totalScroll / windowHeight) * 100;
+        scrollProgressBar.style.width = `${scrollPercent}%`;
+    }
+
+    // Shrink Navbar on Scroll
+    if (navbar) {
+        if (scrollY > 50) {
+            navbar.style.padding = '0 20px';
+            navbar.style.background = 'rgba(11, 15, 20, 0.85)';
+        } else {
+            navbar.style.padding = '0 30px';
+            navbar.style.background = 'rgba(11, 15, 20, 0.6)';
+        }
+    }
 });
 
 // IntersectionObserver to lift social links when footer is visible
@@ -322,9 +343,9 @@ function typeSequence() {
         roleIndex = (roleIndex + 1) % roles.length;
         typingDelay = 500;
     }
-
     // Use a solid block cursor for a terminal aesthetic
-    typingText.innerHTML = typingText.textContent + '<span class="cursor" style="color: var(--accent); animation: blink 1s step-end infinite;">█</span>';
+    const prefix = '<span style="color: var(--accent); opacity: 0.8; margin-right: 8px;">root@system:~#</span>';
+    typingText.innerHTML = prefix + typingText.textContent + '<span class="cursor" style="color: var(--accent); animation: blink 1s step-end infinite;">█</span>';
 
     setTimeout(typeSequence, typingDelay);
 }
